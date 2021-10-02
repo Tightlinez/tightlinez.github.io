@@ -15,6 +15,7 @@
   },
   "scripts": {
   	"dev": "parcel ./src/*.html",
-	"build": "parcel build --public-url ./ ./src/*.html --dist-dir build"
+	"build": "parcel build --public-url ./ ./src/*.html --dist-dir build",
+	"host": "http-server build"
   }
 }

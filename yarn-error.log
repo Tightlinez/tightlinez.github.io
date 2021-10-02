@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/bin/node /usr/bin/yarn add --json @parcel/transformer-image@2.0.0-rc.0 -D -W
+  /usr/bin/node /usr/bin/yarn add --dev http-server
 
 PATH: 
-  /tmp/yarn--1633147422318-0.2297136811208047:/home/ruthenic/Coding/Web/tightlinez_web/node_modules/.bin:/home/ruthenic/.config/yarn/link/node_modules/.bin:/home/ruthenic/.yarn/bin:/usr/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/lib/node_modules/npm/bin/node-gyp-bin:/usr/bin/node_modules/npm/bin/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/ruthenic/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/ruthenic/.local/bin:/usr/share/code
+  /usr/local/sbin:/usr/local/bin:/usr/bin:/home/ruthenic/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/ruthenic/.local/bin:/usr/share/code
 
 Yarn version: 
   1.22.14
@@ -22,7 +22,6 @@ npm manifest:
     "name": "tightlinez_web",
     "version": "1.0.0",
     "description": "a website for business",
-    "main": "index.js",
     "repository": "git@github.com:Tightlinez/website.git",
     "author": "Ruthenic <mdrakea3@tutanota.com>",
     "license": "BSD-3-Clause",
@@ -35,8 +34,9 @@ npm manifest:
       "parcel": "^2.0.0-rc.0"
     },
     "scripts": {
-    	"dev": "parcel ./src/index.html",
-  	"build": "parcel build --public-url ./ ./src/index.html --experimental-scope-hoisting --out-dir build"
+    	"dev": "parcel ./src/*.html",
+  	"build": "parcel build --public-url ./ ./src/*.html --dist-dir build",
+  	"host": "http-server build"
     }
   }
 
