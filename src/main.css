@@ -1,0 +1,17 @@
+.topPad {
+    margin-top: 1rem;
+}
+p {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+h4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+li {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+body {background-color: #033A61;}
