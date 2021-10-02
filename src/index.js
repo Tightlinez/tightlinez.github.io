@@ -9,12 +9,23 @@ let headerContent = `
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<div class="navbar-nav">
-				<a class="nav-link" href="/">Home</a>
-				<a class="nav-link" href="/shop.html">Shop</a>
-				<a class="nav-link" href="/contact.html">Contact Us</a>
+			<div class="navbar-nav" id="header-navbar-list">
 			</div>
 		</div>
 	</div>
 </nav>`;
 document.getElementById('header').innerHTML = headerContent;
+let headerList = [{'name': 'Home', 'href': '/'}, {'name': 'Shop', 'href': '/shop.html'}, {'name': 'Contact Us', 'href': '/contact.html'}]
+for (let i = 0; i < headerList.length; i++) {
+	var entry = headerList[i]
+	console.log(entry)
+	var hrefToTestAgainst = window.location.href.split("/")
+	hrefToTestAgainst = "/" + hrefToTestAgainst.slice(3).join("/")
+	if (hrefToTestAgainst === entry['href']) {
+		console.log(`[Navbar] Found active URL '${entry['href']}' in header!`)
+		document.getElementById("header-navbar-list").innerHTML += `<a class="nav-link active" href="${entry['href']}">${entry['name']}</a>`
+	} else {
+		console.log(`${entry['href']}`)
+		document.getElementById("header-navbar-list").innerHTML += `<a class="nav-link" href="${entry['href']}">${entry['name']}</a>`
+	}
+}
