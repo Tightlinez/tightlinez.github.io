@@ -10,6 +10,9 @@
 		clear: left;
 		clear: right;
 	}
+	.topPad {
+		margin-top: 1rem;
+	}
 	p {
 		margin-left: 1rem;
 		margin-right: 1rem;
@@ -18,15 +21,17 @@
   </head>
   <body class="bg-dark text-light">
     <script src="./index.js" type="module"></script>
-	<div id='header'></div>
-	<div class="position-relative" style="margin-top: 1rem;">
-	   	<div class="position-absolute translate-middle-x top-0 start-50">
-	   		<h1>Tightlinez<h1>
+	<div id='navbar'></div>
+	<div id='header' class="topPad">
+	   	<div class="d-flex justify-content-center">
+	   		<h1>Tightlinez</h1>
+	   	</div>
+	   	<div class="d-flex justify-content-center">
 	   		<h3>Bait an' Tackle</h3>
 	   	</div>
-	</div>
+   	</div>
 	<br><br><br><br> <!--TODO: remove this temp fix once i figure out bootstrap-->
-	<div class="container">
+	<div class="container" id="contentContainer">
 		<div class="row">
 			<div class="col">
 				<p>We are a family friendly, locally owned company<br>
@@ -42,9 +47,9 @@
 			</div>
 			<div class="col">
 			    <p>We carry various brands such as ChaseBaits, Down South Lures, near every Bass Assasain bait*,
-			    and Sandbar Hooks. As well as this, we are the only bait shop on the east coast* that carries "Corkies",
-			    and we have Poppin' Corks created by a veteran of the military.
-			    (*We cannot 100% confirm this at this time.)</p>
+			    and Sandbar Hooks. As well as this, we are the only bait shop on the east coast* that carries "Corkies".<br>
+			    <!--and we have Poppin' Corks created by a veteran of the military.<br>--> <!--I can't figure out a way to make this sound like a normal person, so just gonna comment it out for now-->
+			    *We cannot 100% confirm this at this time.</p>
 			</div>
 		</div>
 	</div>

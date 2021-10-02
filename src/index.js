@@ -19,7 +19,7 @@ let headerContent = `
 		<span class="float-right text-dark">&copy; 2021 Tightlinez</span>
 	</div>
 </nav>`;
-document.getElementById('header').innerHTML = headerContent;
+document.getElementById('navbar').innerHTML = headerContent;
 console.log('[Navbar] Injected header into div!');
 let headerList = [
   {'name': 'Home', 'href': '/'}, {'name': 'Shop', 'href': '/shop.html'},
