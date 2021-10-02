@@ -1,3 +1,4 @@
+// © 2021 Tightlinez, licensed under BSD-3-Clause
 import * as bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 console.log("If you're looking here, you should probably help me with the site.");
@@ -16,7 +17,12 @@ let headerContent = `
 	</div>
 </nav>`;
 document.getElementById('header').innerHTML = headerContent;
-let headerList = [{'name': 'Home', 'href': '/'}, {'name': 'Shop', 'href': '/shop.html'}, {'name': 'Contact Us', 'href': '/contact.html'}]
+console.log("[Navbar] Injected header into div!")
+let headerList = [
+	{'name': 'Home', 'href': '/'}, 
+	{'name': 'Shop', 'href': '/shop.html'}, 
+	{'name': 'Contact Us', 'href': '/contact.html'}
+]
 for (let i = 0; i < headerList.length; i++) {
 	var entry = headerList[i]
 	console.log(entry)
@@ -26,7 +32,8 @@ for (let i = 0; i < headerList.length; i++) {
 		console.log(`[Navbar] Found active URL '${entry['href']}' in header!`)
 		document.getElementById("header-navbar-list").innerHTML += `<a class="nav-link active" href="${entry['href']}">${entry['name']}</a>`
 	} else {
-		console.log(`${entry['href']}`)
+		console.log(`[Navbar] Current header href ${entry['href']} and not ${hrefToTestAgainst}, setting to default!`)
 		document.getElementById("header-navbar-list").innerHTML += `<a class="nav-link" href="${entry['href']}">${entry['name']}</a>`
 	}
-}
+} //overly complicated code to select the active url from the header and make it active
+console.log("[Navbar] Inserted list of available locations into header!")

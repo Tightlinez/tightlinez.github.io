@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/bin/node /usr/bin/yarn add --dev http-server
+  /usr/bin/node /usr/bin/yarn add --json @parcel/transformer-image@2.0.0-rc.0 -D -W
 
 PATH: 
-  /usr/local/sbin:/usr/local/bin:/usr/bin:/home/ruthenic/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/ruthenic/.local/bin:/usr/share/code
+  /tmp/yarn--1633155681714-0.5398487216657617:/home/ruthenic/Coding/Web/tightlinez_web/node_modules/.bin:/home/ruthenic/.config/yarn/link/node_modules/.bin:/home/ruthenic/.yarn/bin:/usr/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/lib/node_modules/npm/bin/node-gyp-bin:/usr/bin/node_modules/npm/bin/node-gyp-bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/home/ruthenic/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/ruthenic/.local/bin:/usr/share/code
 
 Yarn version: 
   1.22.14
@@ -14,8 +14,10 @@ Platform:
   linux x64
 
 Trace: 
-  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
-      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:71:26)
+  Error: https://registry.yarnpkg.com/@parcel%2ftransformer-image: ETIMEDOUT
+      at Timeout._onTimeout (/usr/lib/node_modules/yarn/lib/cli.js:141545:19)
+      at listOnTimeout (node:internal/timers:557:17)
+      at processTimers (node:internal/timers:500:7)
 
 npm manifest: 
   {
@@ -36,7 +38,7 @@ npm manifest:
     "scripts": {
     	"dev": "parcel ./src/*.html",
   	"build": "parcel build --public-url ./ ./src/*.html --dist-dir build",
-  	"host": "http-server build"
+  	"host": "http-server --port 1234 build"
     }
   }
 

@@ -16,6 +16,6 @@
   "scripts": {
   	"dev": "parcel ./src/*.html",
 	"build": "parcel build --public-url ./ ./src/*.html --dist-dir build",
-	"host": "http-server build"
+	"host": "http-server --port 1234 build"
   }
 }
