@@ -12,6 +12,7 @@ let headerContent = `
 			<div class="navbar-nav" id="header-navbar-list">
 			</div>
 		</div>
+		<span class="float-right text-dark">&copy; 2021 Tightlinez</span>
 	</div>
 </nav>`;
 document.getElementById('header').innerHTML = headerContent;
