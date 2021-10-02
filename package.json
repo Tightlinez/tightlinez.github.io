@@ -2,7 +2,6 @@
   "name": "tightlinez_web",
   "version": "1.0.0",
   "description": "a website for business",
-  "main": "index.js",
   "repository": "git@github.com:Tightlinez/website.git",
   "author": "Ruthenic <mdrakea3@tutanota.com>",
   "license": "BSD-3-Clause",
@@ -16,6 +15,6 @@
   },
   "scripts": {
   	"dev": "parcel ./src/*.html",
-	"build": "parcel build --public-url ./ ./src/index.html --experimental-scope-hoisting --out-dir build"
+	"build": "parcel build --public-url ./ ./src/*.html --dist-dir build"
   }
 }
