@@ -8,7 +8,7 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - uses: actions/setup-node@v2
-                with:
+              with:
                 node-version: '14'
             - name: Cache pnpm modules
                 uses: actions/cache@v2
@@ -19,11 +19,11 @@ jobs:
                         ${{ runner.os }}-
             - uses: pnpm/action-setup@v2.0.1
                 with:
-                version: 6.17.0
+                  version: 6.17.0
             - run: pnpm install
             - run: pnpm build
             - name: Deploy
-                uses: peaceiris/actions-gh-pages@v3
-                with:
+              uses: peaceiris/actions-gh-pages@v3
+              with:
                 github_token: ${{ secrets.GITHUB_TOKEN }}
                 publish_dir: ./build
