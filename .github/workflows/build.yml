@@ -8,12 +8,22 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - uses: actions/setup-node@v2
-              with:
-                  node-version: '14'
-            - run: yarn install
-            - run: yarn build
+                with:
+                node-version: '14'
+            - name: Cache pnpm modules
+                uses: actions/cache@v2
+                with:
+                    path: ~/.pnpm-store
+                    key: ${{ runner.os }}-${{ hashFiles('**/pnpm-lock.yaml') }}
+                    restore-keys: |
+                        ${{ runner.os }}-
+            - uses: pnpm/action-setup@v2.0.1
+                with:
+                version: 6.17.0
+            - run: pnpm install
+            - run: pnpm build
             - name: Deploy
-              uses: peaceiris/actions-gh-pages@v3
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./build
+                uses: peaceiris/actions-gh-pages@v3
+                with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                publish_dir: ./build
