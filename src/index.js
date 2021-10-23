@@ -27,6 +27,7 @@ let setupNavbar = async () => {
 	console.log('[Navbar] Injected header into div!');
 	let headerList = [
 	  {'name': 'Home', 'href': '/'},
+	  {'name': 'Products', 'href': '/stuff.html'},
 	  {'name': 'Contact Us', 'href': '/contact.html'}
 	];
 	for (let i = 0; i < headerList.length; i++) {
@@ -47,6 +48,7 @@ let setupNavbar = async () => {
 	  }
 	}  // overly complicated code to select the active url from the header and make
 	   // it active
+	   // TODO: please god help me
 	console.log('[Navbar] Inserted list of available locations into header!');
 }
 setupNavbar()
